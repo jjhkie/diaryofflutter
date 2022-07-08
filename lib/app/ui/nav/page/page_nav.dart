@@ -1,3 +1,5 @@
+import 'package:diaryofflutter/app/data/util.dart';
+import 'package:diaryofflutter/app/routes/app_routes.dart';
 import 'package:diaryofflutter/app/ui/chart/page/page_chart.dart';
 import 'package:diaryofflutter/app/ui/history/page/page_history.dart';
 import 'package:diaryofflutter/app/ui/nav/controller/controller_nav.dart';
@@ -24,7 +26,9 @@ class PageNav extends GetView<ControllerNav> {
         }),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => Get.toNamed(
+          Routes.WRITE,
+        ),
         child: Icon(Icons.send),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
@@ -65,5 +69,4 @@ class PageNav extends GetView<ControllerNav> {
       ),
     );
   }
-
 }
