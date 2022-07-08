@@ -28,6 +28,7 @@ class PageNav extends GetView<ControllerNav> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => Get.toNamed(
           Routes.WRITE,
+
         ),
         child: Icon(Icons.send),
       ),

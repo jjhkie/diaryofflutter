@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 class ControllerToday extends GetxController{
 
   final dbHelper = DatabaseHelper.instance;
-  late Diary todayDiary = Diary(title: '', memo: '', image: 'assets/img/b1.jpg', status: 0, date: Utils.getFormatTime(DateTime.now()));
+  Diary? todayDiary;
 
   getTodayDiary() async {
     print('1-------');
@@ -21,15 +21,6 @@ class ControllerToday extends GetxController{
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
         todayDiary = diary.first;
         update();
-      });
-    } else {
-      WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-        todayDiary = Diary(
-            title: '',
-            memo: '',
-            image: 'assets/img/b1.jpg',
-            status: 0,
-            date: Utils.getFormatTime(DateTime.now()));
       });
     }
   }
